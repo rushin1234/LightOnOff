@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        .con{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            margin: 10px;
+            color: black;
+            font-size: larger;
+            background-color: yellow;
+            height: 40px; width: 160px;
+            cursor: pointer;
+            border-radius: 5%;
+        }
+        #img{
+            height: 70vh; width: 18vw;
+            background: url("off.PNG");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div id="img">
+        </div>
+        <button id="btn">Turn On</button>
+    </div>
+
+    <script>
+        let btn=document.getElementById('btn');
+        let img=document.getElementById('img');
+        btn.addEventListener('click',change);
+        function change(){
+            if(btn.textContent=="Turn On"){
+                img.style.background="url(on.PNG)"
+                img.style.backgroundPosition="center center"
+                btn.textContent="Turn Off";
+            }else{
+                img.style.background="url(off.PNG)"
+                img.style.backgroundPosition="center center"
+                btn.textContent="Turn On";
+            }
+        }
+    </script>
+</body>
+</html>
